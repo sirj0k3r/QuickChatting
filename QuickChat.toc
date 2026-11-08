@@ -1,6 +1,6 @@
 ## Interface: 120105, 16001
 ## Title: Quick Chat
-## Version: 1.0.0
+## Version: 1.1.0
 ## Author: SirJ0K3R
 ## Notes: Choose which chat tab is selected when you log in or reload
 ## IconTexture: Interface\AddOns\QuickChat\icon
