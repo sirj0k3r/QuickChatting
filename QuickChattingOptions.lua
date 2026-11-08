@@ -10,7 +10,7 @@ local category = nil;
 
 local function IsTabMissing()
     local _, resolvedIndex = QC_ResolveTab();
-    return QuickChatDB.tabName ~= nil and resolvedIndex == nil;
+    return QuickChattingDB.tabName ~= nil and resolvedIndex == nil;
 end
 
 local function GetTabValue()
@@ -37,7 +37,7 @@ end
 local function GetTabOptions()
     local container = Settings.CreateControlTextContainer();
     if (IsTabMissing()) then
-        container:Add(MISSING_TAB, '"' .. QuickChatDB.tabName .. '" (not docked, using General)');
+        container:Add(MISSING_TAB, '"' .. QuickChattingDB.tabName .. '" (not docked, using General)');
     end
     for _, tab in ipairs(QC_GetDockedTabs()) do
         local label = tab.name;
@@ -52,7 +52,7 @@ end
 local function GetTabTooltip()
     local tooltip = "Selected when you log in or reload. Only tabs docked with General are listed. Saved per character.";
     if (IsTabMissing()) then
-        tooltip = tooltip .. "\n\n" .. RED_FONT_COLOR:WrapTextInColorCode('"' .. QuickChatDB.tabName .. '" is no longer docked or was renamed. Using General.');
+        tooltip = tooltip .. "\n\n" .. RED_FONT_COLOR:WrapTextInColorCode('"' .. QuickChattingDB.tabName .. '" is no longer docked or was renamed. Using General.');
     end
     return tooltip;
 end
@@ -64,7 +64,7 @@ end
 local function CreateSettings()
     category = QuickAddons:RegisterVerticalSubcategory("Chat");
 
-    local setting = Settings.RegisterProxySetting(category, "QuickChat_DefaultTab", Settings.VarType.Number, "Default Chat Tab", 1, GetTabValue, SetTabValue);
+    local setting = Settings.RegisterProxySetting(category, "QuickChatting_DefaultTab", Settings.VarType.Number, "Default Chat Tab", 1, GetTabValue, SetTabValue);
     Settings.CreateDropdown(category, setting, GetTabOptions, GetTabTooltip);
 
     QuickAddons:RegisterMember(ADDON_NAME, "Chat", "Choose which chat tab is selected when you log in or reload.", category);
@@ -82,9 +82,9 @@ loader:SetScript("OnEvent", function(self, _, addonName)
     CreateSettings();
 end)
 
-SLASH_QUICKCHAT1 = "/quickchat";
-SLASH_QUICKCHAT2 = "/qchat";
-SlashCmdList["QUICKCHAT"] = function()
+SLASH_QUICKCHATTING1 = "/quickchatting";
+SLASH_QUICKCHATTING2 = "/qchat";
+SlashCmdList["QUICKCHATTING"] = function()
     if (category ~= nil) then
         Settings.OpenToCategory(category:GetID());
     end

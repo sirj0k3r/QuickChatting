@@ -1,4 +1,4 @@
-**QuickChat** is an addon that lets you choose which chat tab is selected when you log in or reload, instead of always starting on General.
+**QuickChatting** is an addon that lets you choose which chat tab is selected when you log in or reload, instead of always starting on General.
 
 * Pick any tab docked with General as your default
 * Applies on login and `/reload`, not on zone changes or instance portals
@@ -17,4 +17,4 @@
 * Picking a tab in the settings panel switches to it immediately.
 
 ## Options
-Esc > Options > AddOns > Quick Chat, or type `/quickchat` or `/qchat`.
+Esc > Options > AddOns > Quick Chatting, or type `/quickchatting` or `/qchat`.

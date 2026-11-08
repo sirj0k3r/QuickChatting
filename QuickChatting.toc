@@ -1,12 +1,12 @@
 ## Interface: 120105, 16001
-## Title: Quick Chat
+## Title: Quick Chatting
 ## Version: 1.1.0
 ## Author: SirJ0K3R
 ## Notes: Choose which chat tab is selected when you log in or reload
-## IconTexture: Interface\AddOns\QuickChat\icon
+## IconTexture: Interface\AddOns\QuickChatting\icon
 ## Category: Chat
-## SavedVariablesPerCharacter: QuickChatDB
+## SavedVariablesPerCharacter: QuickChattingDB
 
 QuickAddonsSettings.lua
-QuickChat.lua
-QuickChatOptions.lua
+QuickChatting.lua
+QuickChattingOptions.lua

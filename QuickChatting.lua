@@ -1,14 +1,14 @@
 function QC_InitDB()
-    if (type(QuickChatDB) ~= "table") then
-        QuickChatDB = {};
+    if (type(QuickChattingDB) ~= "table") then
+        QuickChattingDB = {};
     end
 
-    local frameIndex = QuickChatDB.frameIndex;
-    local tabName = QuickChatDB.tabName;
+    local frameIndex = QuickChattingDB.frameIndex;
+    local tabName = QuickChattingDB.tabName;
     if (type(frameIndex) ~= "number" or frameIndex < 1 or frameIndex > NUM_CHAT_WINDOWS or frameIndex ~= math.floor(frameIndex)
         or type(tabName) ~= "string" or tabName == "") then
-        QuickChatDB.frameIndex = nil;
-        QuickChatDB.tabName = nil;
+        QuickChattingDB.frameIndex = nil;
+        QuickChattingDB.tabName = nil;
     end
 end
 
@@ -55,23 +55,23 @@ end
 ---------------------------------------------------------------------------
 
 function QC_ResolveTab()
-    if (type(QuickChatDB) ~= "table") then
+    if (type(QuickChattingDB) ~= "table") then
         return nil;
     end
-    local tabName = QuickChatDB.tabName;
+    local tabName = QuickChattingDB.tabName;
     if (tabName == nil) then
         return nil;
     end
 
     local tabs = QC_GetDockedTabs();
     for _, tab in ipairs(tabs) do
-        if (tab.index == QuickChatDB.frameIndex and tab.name == tabName) then
+        if (tab.index == QuickChattingDB.frameIndex and tab.name == tabName) then
             return tab.frame, tab.index;
         end
     end
     for _, tab in ipairs(tabs) do
         if (tab.name == tabName) then
-            QuickChatDB.frameIndex = tab.index;
+            QuickChattingDB.frameIndex = tab.index;
             return tab.frame, tab.index;
         end
     end
@@ -80,11 +80,11 @@ end
 
 function QC_SetChoice(index, name)
     if (index == nil or index == 1) then
-        QuickChatDB.frameIndex = nil;
-        QuickChatDB.tabName = nil;
+        QuickChattingDB.frameIndex = nil;
+        QuickChattingDB.tabName = nil;
     else
-        QuickChatDB.frameIndex = index;
-        QuickChatDB.tabName = name;
+        QuickChattingDB.frameIndex = index;
+        QuickChattingDB.tabName = name;
     end
 end
 
