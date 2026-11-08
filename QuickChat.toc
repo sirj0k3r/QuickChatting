@@ -7,5 +7,6 @@
 ## Category: Chat
 ## SavedVariablesPerCharacter: QuickChatDB
 
+QuickAddonsSettings.lua
 QuickChat.lua
 QuickChatOptions.lua
