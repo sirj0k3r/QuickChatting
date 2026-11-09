@@ -62,12 +62,12 @@ end
 ---------------------------------------------------------------------------
 
 local function CreateSettings()
-    category = QuickAddons:RegisterVerticalSubcategory("Chat");
+    category = QuickAddons:RegisterVerticalSubcategory("Chatting");
 
     local setting = Settings.RegisterProxySetting(category, "QuickChatting_DefaultTab", Settings.VarType.Number, "Default Chat Tab", 1, GetTabValue, SetTabValue);
     Settings.CreateDropdown(category, setting, GetTabOptions, GetTabTooltip);
 
-    QuickAddons:RegisterMember(ADDON_NAME, "Chat", "Choose which chat tab is selected when you log in or reload.", category);
+    QuickAddons:RegisterMember(ADDON_NAME, "Chatting", "Choose which chat tab is selected when you log in or reload.", category);
 end
 
 local loader = CreateFrame("Frame");
